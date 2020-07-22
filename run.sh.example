@@ -1,0 +1,15 @@
+#!/bin/bash
+
+docker run -dit \
+  --name trading-zoo-user-data \
+  --restart=always \
+  --add-host rabbitmqd:10.100.10.80 \
+  -e NODE_ENV=production \
+  -e AMQP_HOSTNAME='' \
+  -e AMQP_PASSWORD='' \
+  -e AMQP_VHOST='' \
+  -e DB_HOST='' \
+  -e DB_USER='' \
+  -e DB_PASS='' \
+  -e DB_NAME='' \
+  hub.cgblockchain.com/trading-zoo/user-data

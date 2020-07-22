@@ -1,0 +1,22 @@
+{
+  "db": {
+    "host": "trading-zoo-db.c5sumelfi7by.us-east-2.rds.amazonaws.com"
+  },
+  "amqp": {
+    "hostname": "rabbitmqd",
+    "vhost": "trading"
+  },
+  "mailgun": {
+    "apiKey": "key-e9e2c6c74be0de8d0dfb570dadb123b5",
+    "domain": "bct.io"
+  },
+  "encryption": {
+    "key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqfZ/Qr82MFzMxuxZYBzS\nXhIhDow5PPl2yBduon4Xg2cExtPjLgY/+adyizqjMKr8JpbmwSyazn4mERyADdsZ\n/5lZXO75wFt7Q9eCQF1jY0faKz6JFG6sv8B8bLqC+NGZjkRZ/VHN6/OJkyrP7uD+\nSvoVEottUVc6rQKxc6C5wATfQq/wUt7MYafsuDVHHdY2vXVwwinptTBGiQ8J7wF+\nITCWMo0fVt0KFXrpBDJLOONzJdd4p/WJyegyy+UcPUnfogdFZ0rvM76QXpQl+Z60\naAcCwN8pHTkMFkJPXDU8T1ruMpWcpc78QjdLoIHO3LwAIqxIeuYhqTvfFA+5YRLX\nHQIDAQAB\n-----END PUBLIC KEY-----"
+  },
+  "telegram": {
+    "notifyBot": {
+      "token": "740863706:AAGU_SkQ-WdIqqxhE2o94JXFpDJyAWWk-eI"
+    },
+    "chatId": "-1001285881431"
+  }
+}

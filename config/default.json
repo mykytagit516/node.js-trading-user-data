@@ -1,0 +1,92 @@
+{
+  "app": {
+    "version": "0.5.3"
+  },
+  "db": {
+    "host": "localhost",
+    "user": "",
+    "password": "",
+    "port": "5432",
+    "database": "trading_zoo_db"
+  },
+  "amqp": {
+    "protocol": "amqp",
+    "hostname": "localhost",
+    "port": 5672,
+    "username": "guest",
+    "password": "guest",
+    "locale": "en_US",
+    "frameMax": 0,
+    "heartbeat": 30,
+    "vhost": "/",
+    "queues": {
+      "settings": {
+        "durable": false,
+        "expires": 60000,
+        "maxLength": 10000,
+        "messageTtl": 600000,
+        "overflow": "drop-head",
+        "noAck": false
+      }
+    }
+  },
+  "logging": {
+    "msname": "user-data",
+    "db": {
+      "console": true
+    },
+    "handlers": {
+      "console": true
+    }
+  },
+  "payments": {
+    "keys": {
+      "public": "/path/to/public.pem",
+      "private": "/path/to/private.pem"
+    }
+  },
+  "encryption": {
+    "key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA+G5xkiddo2F1SNVUieVy\nhpirjAon5ZYt4R+5IkRrUlrLz+odJKjrT8AJGkHLpQyPCiCUJ64qpkr59v4trIGX\ncUBFLahnyiAoAuKQdtaUcwnwE4vZPywIOAqWnt/GzZqyvCqVHNiIIQv1sRcMTxsh\npTM884Lkg6fJddR7yeiaU/zRaC3paHcfcMqL7yz+Zd9PKEU39FogxkhSXSwU+SiW\nMeOJuCy2pnPG+0hmcuEClhJZLOOu+TgvwW8X+Rnnm2mjjHWiel3jOaAcmsHPN1st\nt0y9TR1uFgpxx76UKF4gsw7pztP0Qf2BgvwoBy/c7kS8Q2jx8djQEg5me8WLfPDs\nNwIDAQAB\n-----END PUBLIC KEY-----",
+    "privateKey": "-----BEGIN RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: DES-EDE3-CBC,2FCA87F3AF6F2D3D\n\ntqNMcQGq4DF+6WN/ai+pfnsEGQYotDFZHpovWRRgmljIvZ5R24sIQHzj/8OsF57r\np+M2+rXFbzexCXlcPtudsMsJXVUGhpG+Uy5Mwv0SD1GxLgM+L+KiEhptQ+7HSY3G\ndtG/oiX6W+Fsiz3pdyRZUOIn9t33vYQ9tQZHusigSRlFaZkMTaxp7BpExm5j1KOi\nIK4Lz8bgpgCHN4LSM72V90DwtcS/Q4w/HAYUoCUqRa9nHd/JZBszdi3neH9HdGDl\nOr5Ai+njYrJmMab+CYpTDaq1+2T8rQeM7OG3Yc2u2dnTFJ/cGcz5xUhtsIqovmm5\nFwr7CWmlLuKTZtWBLXUb+ChEc2sCaSQLyb88Oto6eZCDUow55UbmAm8yVS10MQ3W\ne9VUTHvCET6duO0dMeQXeVzpSKTAIyRjej3lw7iLgym+JazRqTSUomDxkAOvEDPy\nTzKTELDz7HZJv0wDlVUNIvXMjyViCNYfaal9IdKKvxKWuLJRJ3ms/PHLYessNCnP\n4kcYH/3rOdkwvXOSsxc6yFCHLQsAeKlzfwvJRx1p003+3WwPaTzyW5CXVSbXh2ie\nofof/ZZlia2QRfVQMGJdCAG5pMbRhOkpc27FLKeY4aBMVIXTESM0SmKbdyxuFXd8\nA3275Xm2m2g+ygz16m7qFjPb85UGYBCiP3CLRB2/p6OIdpfO04N+qj5gX618bE4V\n0E96XsUHuKQAqItK5/O9MXViPzhGUhRirQBLplYT4K0VwY6CdgkqJQmxd/8CiNcS\nfB4jmQACc/WGdRWusV07ZKmfPdOWgBJBAww08E9b52wRhTlEETUQSPYirVGlA8HD\nf5ofAHRq5YOGtCslWAQ0LWQ1p1F6F0fHEGaV2FRLuRAsrKGJMSxHxZeBrOdS6sR4\n29J4s3eUG9i0pOJLeWDY68LfXQ5azzM5jtAFIomMSlxrkI9FPWXAKGtVwZc3La0j\nsnXgFAcP8bFPPaQTrbx+uY2gsqvwRgGdrqZvRNJMdCN11PssBrinSq4gm4MaNfbF\noTgmrAJXTiWVk3G6gd/uVFfSRS7YjJd9MFcSyB2pHc8W5FLz86fAabiP6BhUoEN1\nNzfCXN4YxSrePeA/jjkTkay08s/vhoNBZzb+YCrVhxfZUws5HAJNc9wKh3AMmG/d\nwahpc3Egj4EXsogfFm5WNthjhG1dPg+AyzKSu+CfYvDdEtp4DCmQK3EtV4k9Nkby\neOR/O9rUu0/aL2UHgyJs/oh/srqcWGDnLfqYUbecCsNq8m6qGoPGjL7/xVusv5yi\nfgZKJCeKYl54qbYqT43S/32RGSFuRxOi4PCSXQ5My5iQ1qXw5HlbS5jKm/T5sknG\n5T/gWbNlFLs2CutwbpDf0W5TCmEO7vDyMtqu+sThVrWKbZ8aqwBZYxe7S03r1fC7\nhsJGrh7r8YPTTr7F/sqVRis3oZtcJ4fTQ8NeVw0E13Y7BzSnPe59sQG5I4A9ouHw\nNQ3pX7fOYyvjdXJaTzc0xRA11C9n9tSAdm4O6XGy4iDJEeqZlejCniSIo3vD3PYb\nVLQpQDSHRFRA1NmOZtSVNaRMedL4SRnNRnSYlTNo/DDn8dtn+x/FRGGoRCg5ZP04\n-----END RSA PRIVATE KEY-----",
+    "passphrase": "demo"
+  },
+  "mailgun": {
+    "apiKey": "49c7a23583e1a93c54f36d117a374042-1053eade-d482f71e",
+    "domain": "sandboxd0e5f59ecc264788a8570e35f7f5295a.mailgun.org"
+  },
+  "telegram": {
+    "notifyBot": {
+      "token": "740863706:AAGU_SkQ-WdIqqxhE2o94JXFpDJyAWWk-eI"
+    },
+    "chatId": "-1001285881431"
+  },
+  "emails": {
+    "mainAppHost": "cdn.bct.io",
+    "imgPrefix": "https://cdn.bct.io/em/img",
+    "templatesDir": "./templates/emails",
+    "newPayment": {
+      "from": {
+        "name": "BCT User Data New Payment",
+        "email": "payments@bct.io"
+      },
+      "to": {
+        "email": "sale-crm@cgblockchain.com"
+      },
+      "cc": [
+        {
+          "name": "Andrey",
+          "email": "apankov@cgblockchain.com"
+        }
+      ],
+      "subject": "New Payment for Terminal",
+      "template": "newPayment"
+    }
+  },
+  "aboutBctAPI": {
+    "url": "http://localhost:3001/"
+  },
+  "baseCurrency": "BTC",
+  "conversion": {
+    "url": "http://market-data-ws.default/api/convert/price"
+  }
+}

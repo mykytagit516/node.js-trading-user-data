@@ -1,0 +1,17 @@
+{
+  "db": {
+    "host": "DB_HOST",
+    "user": "DB_USER",
+    "password": "DB_PASS",
+    "port": "DB_PORT",
+    "database": "DB_NAME"
+  },
+  "amqp": {
+    "hostname": "AMQP_HOSTNAME",
+    "port": "AMQP_PORT",
+    "username": "AMQP_USERNAME",
+    "password": "AMQP_PASSWORD",
+    "vhost": "AMQP_VHOST"
+  },
+  "baseCurrency": "BASE_CURRENCY"
+}

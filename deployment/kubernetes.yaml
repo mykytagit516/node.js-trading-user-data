@@ -1,0 +1,87 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-data
+  labels:
+    keel.sh/policy: major
+    keel.sh/trigger: poll
+  annotations:
+    keel.sh/pollSchedule: "@every 1m"
+spec:
+  selector:
+    matchLabels:
+      app: user-data
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: user-data
+    spec:
+      restartPolicy: Always
+      containers:
+        - name: user-data
+          image: 791495472660.dkr.ecr.us-west-2.amazonaws.com/trading/trading-zoo-user-data:0.2.0
+          imagePullPolicy: Always
+          resources:
+            limits:
+              cpu: "300m"
+              memory: "300M"
+            requests:
+              cpu: "150m"
+              memory: "150M"
+          ports:
+            - containerPort: 9091
+              name: bct-metrics
+          env:
+            - name: NODE_ENV
+              valueFrom:
+                secretKeyRef:
+                  name: environment
+                  key: name
+            - name: AMQP_HOSTNAME
+              value: "rabbitmq.rabbitmq"
+            - name: AMQP_USERNAME
+              value: "bct"
+            - name: AMQP_PASSWORD
+              value: "qqMgwe+5hwotrY0R"
+            - name: AMQP_VHOST
+              value: "trading"
+            - name: DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: db
+                  key: address
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: db
+                  key: user
+            - name: DB_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: db
+                  key: password
+            - name: DB_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: db
+                  key: port
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: db
+                  key: database
+      imagePullSecrets:
+        - name: cgblockchainkey
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-data
+spec:
+  selector:
+    app: user-data
+  ports:
+    - port: 9091
+      targetPort: 9091
+      name: bct-metrics
